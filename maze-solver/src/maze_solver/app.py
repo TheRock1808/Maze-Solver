@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+from maze_solver.view.renderer import SVGRenderer
 
 app = Flask(__name__)
 

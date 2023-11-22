@@ -57,6 +57,11 @@
 <body>
     <h1>Welcome to the Python GUI in Web!</h1>
 
+    <div id="maze-container">
+        <!-- Render the maze using the SVGRenderer -->
+        {{ maze_svg|safe }}
+    </div>
+
     <form class="mazeForm" id="mazeForm">
         <button type="button" class="custom-button" onclick="solveMaze()">Solve Maze</button>
     </form>
