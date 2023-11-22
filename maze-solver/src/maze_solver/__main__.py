@@ -24,6 +24,9 @@ class MazeSolverGUI:
         if file_path:
             self.file_path = pathlib.Path(file_path)
             print(f"Selected maze file: {self.file_path}")
+        maze = Maze.load(self.file_path)
+        renderer = SVGRenderer()
+        renderer.render(maze).preview()
 
     def solve_and_display(self):
         if self.file_path:
@@ -32,8 +35,6 @@ class MazeSolverGUI:
 
             if solutions:
                 renderer = SVGRenderer()
-
-                renderer.render(maze).preview()
 
                 for solution in solutions:
                     renderer.render(maze, solution).preview()
